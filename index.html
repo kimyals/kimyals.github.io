@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spirit of Kimyal's — Suku Kimyal, Yahukimo, Papua Pegunungan</title>
+    <meta name="description" content="Mengenal Suku Kimyal — suku asli di Yahukimo, Papua Pegunungan. Profil, wilayah, Bahasa Kimyal, budaya, dan potensi wisata alam.">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-blue:   #0c2c46;
+            --color-green:  #1b3c1f;
+            --color-red:    #641f17;
+            --color-orange: #956019;
+        }
+
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+
+        .title-font { font-family: 'Playfair Display', 'Times New Roman', serif; }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(12,44,70,.65), rgba(12,44,70,.80)), url('./images/ilustrasi2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll; /* fixed breaks on iOS — use JS parallax only on desktop */
+            transition: background-image .5s ease;
+        }
+        .hero-bg:hover {
+            background-image: linear-gradient(rgba(12,44,70,.3), rgba(12,44,70,.45)), url('./images/ilustrasi2.jpg');
+        }
+        @media (min-width: 768px) {
+            .hero-bg { background-attachment: fixed; }
+        }
+
+        .nav-link {
+            transition: color .25s ease, transform .25s ease;
+            position: relative;
+        }
+        .nav-link:hover { color: var(--color-blue); transform: translateY(-2px); }
+
+        /* Active nav state */
+        a.nav-link.active {
+            color: var(--color-blue) !important;
+            font-weight: 700;
+        }
+        /* Underline indicator — desktop nav only */
+        @media (min-width: 768px) {
+            a.nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: var(--color-blue);
+                border-radius: 2px;
+            }
+        }
+
+        .card-hover { transition: transform .35s ease, box-shadow .35s ease; }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,.14);
+        }
+
+        /* Blurable background layer for tourism cards */
+        .card-bg {
+            transition: filter .4s ease, transform .4s ease;
+        }
+        .group:hover .card-bg {
+            filter: blur(5px);
+            transform: scale(1.08);
+        }
+
+        /* Zoomable background layer for region (Wilayah) cards */
+        .region-bg {
+            transition: transform .5s ease;
+        }
+        .group:hover .region-bg {
+            transform: scale(1.12);
+        }
+
+        /* Profile right column — reduce overlay on hover for clearer image */
+        .profile-bg {
+            background: linear-gradient(rgba(149,96,25,.85), rgba(149,96,25,.45)), url('./images/Damen Mos (Tarian Adat).jpg') center/cover no-repeat;
+        }
+        .group:hover .profile-bg {
+            background: linear-gradient(rgba(149,96,25,.3), rgba(149,96,25,.15)), url('./images/Damen Mos (Tarian Adat).jpg') center/cover no-repeat;
+        }
+
+        .btn-brand {
+            background: linear-gradient(135deg, var(--color-blue), var(--color-green));
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .btn-brand:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(12,44,70,.3);
+        }
+
+        /* Aspect ratio helper for covers */
+        .cover-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive heading scale */
+        .heading-xl  { font-size: clamp(2rem,   5vw, 3rem);   line-height: 1.15; }
+        .heading-2xl { font-size: clamp(2.25rem, 6vw, 3.5rem); line-height: 1.1; }
+
+        /* Alpine cloak — hide x-show elements before Alpine initialises */
+        [x-cloak] { display: none !important; }
+
+        /* Contact section — dark blue base + subtle grid lines */
+        .contact-grid {
+            background-color: #0c2c46;
+            background-image:
+                linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: 52px 52px;
+        }
+
+        /* CTA banner background — ilustrasi7 image with dark overlay and parallax */
+        .cta-section {
+            background:
+                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url('./images/ilustrasi11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        @media (max-width: 767px) {
+            .cta-section {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav x-data="navbar()"
+         :class="scrolled ? 'shadow-md border-gray-200' : 'shadow-sm border-gray-100'"
+         class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="px-6 py-4 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#home" @click.prevent="scrollTo('home')" class="flex items-center gap-3">
+                    <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-12 w-auto object-contain">
+                    <div class="leading-tight">
+                        <div class="font-bold text-lg tracking-tight text-[#0c2c46]">The Spirit of Kimyal's</div>
+                        <div class="text-xs text-gray-500 italic">Yahukimo, Papua Pegunungan</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#home" @click.prevent="scrollTo('home')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Beranda</a>
+                    <a href="#about" @click.prevent="scrollTo('about')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Profil</a>
+                    <a href="#region" @click.prevent="scrollTo('region')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Wilayah</a>
+                    <a href="#language" @click.prevent="scrollTo('language')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Bahasa</a>
+                    <a href="#tourism" @click.prevent="scrollTo('tourism')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Wisata</a>
+                    <a href="#gallery" @click.prevent="scrollTo('gallery')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Galeri</a>
+                    <a href="#contact" @click.prevent="scrollTo('contact')" class="nav-link text-gray-600 hover:text-[#0c2c46]">Kontak</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button @click="menuOpen = !menuOpen" aria-label="Toggle menu"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-gray-700 hover:text-[#0c2c46] transition-colors">
+                        <i :class="menuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+                    </button>
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                            class="hidden sm:flex items-center gap-2 px-6 py-3 rounded-2xl btn-brand text-white text-sm font-semibold">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Hubungi Kami</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="menuOpen" x-cloak
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
+             class="md:hidden bg-white border-t">
+            <div class="px-6 py-8 flex flex-col gap-6 text-lg">
+                <a href="#home" @click.prevent="scrollTo('home')" class="nav-link">Beranda</a>
+                <a href="#about" @click.prevent="scrollTo('about')" class="nav-link">Profil</a>
+                <a href="#region" @click.prevent="scrollTo('region')" class="nav-link">Wilayah</a>
+                <a href="#language" @click.prevent="scrollTo('language')" class="nav-link">Bahasa</a>
+                <a href="#tourism" @click.prevent="scrollTo('tourism')" class="nav-link">Wisata</a>
+                <a href="#gallery" @click.prevent="scrollTo('gallery')" class="nav-link">Galeri</a>
+                <a href="#contact" @click.prevent="scrollTo('contact')" class="nav-link">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg h-screen flex items-center relative text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <span class="inline-block px-4 py-2 bg-white/15 border border-white/25 text-white text-xs font-semibold rounded-full uppercase tracking-widest mb-6 backdrop-blur-sm">Suku Asli Papua Pegunungan</span>
+                <h1 class="title-font text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tighter">
+                    The Spirit of<br>
+                    <span class="btn-brand inline-block px-5 py-2 rounded-2xl text-white mt-2">Kimyal</span>
+                </h1>
+                <p class="text-base sm:text-xl md:text-2xl text-gray-200 mb-10">
+                    Mengenal Suku Kimyal — jejak budaya, bahasa, dan kekayaan alam dari dataran tinggi Yahukimo, Papua Pegunungan.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="document.getElementById('tourism').scrollIntoView({ behavior: 'smooth' })"
+                            class="btn-brand text-white px-10 py-5 rounded-3xl text-lg font-semibold flex items-center justify-center gap-3 group">
+                        Jelajahi Potensi Wilayah
+                        <i class="fa-solid fa-arrow-down group-active:rotate-45 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+                            class="px-10 py-5 rounded-3xl border-2 border-white hover:bg-white hover:text-[#0c2c46] text-lg font-medium transition-all">
+                        Kenali Suku Kimyal
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70">
+            <div class="text-sm tracking-widest">GULIR KE BAWAH</div>
+            <i class="fa-solid fa-chevron-down animate-bounce text-3xl"></i>
+        </div>
+    </section>
+
+
+    <!-- PROFIL / ABOUT -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-stretch">
+
+                <!-- Kolom Kiri: Deskripsi Teks & Poin Inti -->
+                <div class="flex flex-col justify-between">
+                    <div class="space-y-4 text-gray-600 text-base leading-relaxed">
+                        <span class="inline-block px-4 py-2 bg-[#0c2c46] text-white text-xs font-semibold rounded-full uppercase tracking-widest mb-2">Profil</span>
+                        <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-[#0c2c46] leading-tight">
+                            Suku Kimyal (Yalenang)
+                        </h2>
+                        <p>
+                            Secara harafiah, nama <strong>Kimyal</strong> berasal dari kata <em>"Kemel Yal"</em> yang berarti "datang melihat", istilah yang disematkan oleh misionaris Amerika, Elinor Young, pada tahun 1970-an saat membandingkan letak geografis wilayah Korupun dengan wilayah Yali di bagian barat. Namun, masyarakat asli secara turun-temurun lebih mengenal diri mereka sebagai <strong>Suku Yalenang</strong>, yang berarti "orang-orang yang mendiami ufuk timur" (tempat matahari terbit).
+                        </p>
+                        <p>
+                            Oleh para antropolog pada awal abad ke-19, masyarakat di kawasan ini (seperti Korupun, Nalca, Nipsan, hingga Langda) dikategorikan sebagai bagian dari <strong>Orang Mek</strong>. Mereka memiliki kesatuan identitas budaya yang sangat kuat dan khas, mulai dari arsitektur rumah adat <em>Ae/Ee</em> (Honai), bahasa <em>Yobo/Yubu</em>, sistem perkebunan <em>Wa/We</em>, hingga tradisi pesta babi yang diiringi nyanyian ritual <em>Mos/Ber</em>.
+                        </p>
+                        <p>
+                            Meskipun nama Kimyal kini populer dan menjadi salah satu pilar penamaan Kabupaten <strong>Yahukimo</strong> (bersama suku Yali, Hubla, dan Momuna), jejak sejarah dan warisan asli sebagai bagian dari rumpun <strong>Mek / Yalenang</strong> tetap menjadi fondasi identitas kultural yang dirawat dan dijaga hingga hari ini.
+                        </p>
+                    </div>
+
+                    <!-- Poin Inti -->
+                    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="flex flex-col justify-between border-l-4 border-[#1b3c1f] pl-4 py-1">
+                            <div class="font-bold text-gray-900 text-lg leading-snug">Identitas Yalenang</div>
+                            <div class="text-sm text-gray-500 mt-1">Nama asli dari leluhur, bermakna masyarakat di ufuk timur.</div>
+                        </div>
+                        <div class="flex flex-col justify-between border-l-4 border-[#641f17] pl-4 py-1">
+                            <div class="font-bold text-gray-900 text-lg leading-snug">Rumpun Orang Mek</div>
+                            <div class="text-sm text-gray-500 mt-1">Kategori antropologis kawasan adat berdasarkan kesamaan kultur.</div>
+                        </div>
+                        <div class="flex flex-col justify-between border-l-4 border-[#956019] pl-4 py-1">
+                            <div class="font-bold text-gray-900 text-lg leading-snug">Kesatuan Budaya</div>
+                            <div class="text-sm text-gray-500 mt-1">Sistem sosial, rumah Ae/Ee, bahasa Yubu, dan tarian Mos.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Gambar dengan overlay -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-2xl p-8 sm:p-12 flex flex-col justify-end min-h-[450px] md:min-h-full">
+                    <div class="profile-bg absolute inset-0"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-4 py-2 bg-white/20 border border-white/30 text-white text-xs font-semibold rounded-full uppercase tracking-widest mb-4 backdrop-blur-sm">Identitas &amp; Warisan</span>
+                        <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">
+                            Menjaga Jejak,<br>Merawat Budaya
+                        </h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- VIDEO PROFILE -->
+    <section id="video-profile" class="py-24 bg-[#0c2c46] relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-14">
+                <span class="inline-block px-4 py-2 bg-white/15 border border-white/25 text-white text-xs font-semibold rounded-full uppercase tracking-widest">Saksikan Kisahnya</span>
+                <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mt-5 text-white">Video Profil Suku Kimyal</h2>
+                <p class="text-white/70 max-w-2xl mx-auto leading-relaxed mt-4">
+                    Menyusuri kehidupan, budaya, dan bentang alam Suku Kimyal di jantung pegunungan Yahukimo — sebuah kisah tentang identitas dan harmoni dengan alam.
+                </p>
+            </div>
+
+            <!-- Minimalist Video Player Mockup -->
+            <div x-data="{ playing: false }"
+                 class="group relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-video cursor-pointer"
+                 @click="playing = true">
+
+                <!-- Thumbnail -->
+                <img src="./images/compilation1.jpg" alt="Video profil Suku Kimyal"
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                <!-- Dark overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0c2c46]/90 via-[#0c2c46]/30 to-transparent"></div>
+
+                <!-- Center Play Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative">
+                        <span class="absolute inset-0 rounded-full bg-white/30 animate-ping"></span>
+                        <div class="relative w-20 h-20 sm:w-24 sm:h-24 bg-white/95 rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                            <i class="fa-solid fa-play text-[#0c2c46] text-2xl sm:text-3xl ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minimalist bottom control bar -->
+                <div class="absolute bottom-0 left-0 right-0 px-6 sm:px-8 py-5 flex items-center gap-4">
+                    <i class="fa-solid fa-play text-white text-sm"></i>
+                    <div class="flex-1 h-1 bg-white/25 rounded-full overflow-hidden">
+                        <div class="h-full w-0 group-hover:w-1/4 bg-white rounded-full transition-all duration-700"></div>
+                    </div>
+                    <span class="text-white/80 text-xs font-medium tracking-wider">03:24</span>
+                    <i class="fa-solid fa-expand text-white/80 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                <a href="#region" onclick="event.preventDefault();document.getElementById('region').scrollIntoView({behavior:'smooth'})"
+                   class="flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0c2c46] rounded-2xl font-semibold hover:bg-gray-100 transition-all">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span>Wilayah Kimyal</span>
+                </a>
+                <a href="#tourism" onclick="event.preventDefault();document.getElementById('tourism').scrollIntoView({behavior:'smooth'})"
+                   class="flex items-center justify-center gap-3 px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold hover:bg-white hover:text-[#0c2c46] transition-all">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>Potensi Wilayah</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WILAYAH / REGION -->
+    <section id="region" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-[#0c2c46] text-white text-xs font-semibold rounded-full uppercase tracking-widest">Wilayah Administratif</span>
+                <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mt-5 mb-4 text-[#0c2c46]">Wilayah Suku Kimyal</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    Suku Kimyal tersebar di dataran tinggi Yahukimo dan mencakup empat distrik administratif dengan bentang alam pegunungan yang khas.
+                </p>
+            </div>
+
+            <!-- 4 Distrik -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+
+                <a href="https://share.google/ndquUIvM1faZ3jS0q" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                    <div class="region-bg absolute inset-0"
+                         style="background: linear-gradient(rgba(27,60,31,.35), rgba(27,60,31,.65)), url('./images/ilustrasi7.jpg') center/cover no-repeat;"></div>
+                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                        <div class="font-semibold text-xl text-white">Korupun</div>
+                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="https://share.google/bBpNbYs1YfJJAHWDl" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                    <div class="region-bg absolute inset-0"
+                         style="background: linear-gradient(rgba(12,44,70,.35), rgba(12,44,70,.65)), url('./images/ilustrasi11.jpg') center/cover no-repeat;"></div>
+                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                        <div class="font-semibold text-xl text-white">Sela</div>
+                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="https://share.google/Ey4jEnuk7QnJ8ZunD" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                    <div class="region-bg absolute inset-0"
+                         style="background: linear-gradient(rgba(100,31,23,.35), rgba(100,31,23,.65)), url('./images/ilustrasi9.jpg') center/cover no-repeat;"></div>
+                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                        <div class="font-semibold text-xl text-white">Duram</div>
+                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="https://share.google/8P9twWt2GZLIqPzHV" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                    <div class="region-bg absolute inset-0"
+                         style="background: linear-gradient(rgba(149,96,25,.35), rgba(149,96,25,.65)), url('./images/ilustrasi3.jpg') center/cover no-repeat;"></div>
+                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                        <div class="font-semibold text-xl text-white">Kwelamdua</div>
+                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+            </div>
+
+            
+            
+            <!-- Info Grid: Klasis GIDI & Topografi -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Kartu Kiri: 7 Klasis GIDI (Dapat diklik menuju website resmi) -->
+                <a href="https://pusatgidi.org/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 card-hover flex flex-col justify-between group transition-all duration-300 hover:border-[#0c2c46]/30">
+                    <div>
+                        <!-- Container Logo GIDI -->
+                        <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center p-2 mb-6 border border-gray-100 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                            <img src="./images/logo-sinode-gidi.png" alt="Logo Sinode GIDI" class="max-w-full max-h-full object-contain">
+                        </div>
+                        
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="title-font text-2xl font-bold text-[#0c2c46] group-hover:text-[#1b3c1f] transition-colors">Masuknya Injil di Suku Kimyal</h3>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-400 group-hover:text-[#0c2c46] transition-colors self-center mb-1"></i>
+                        </div>
+
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Injil masuk di wilayah ini pada tanggal 9 Juli 1963 di Lembah Dogobun yang saat ini disebut Distrik Korupun, Kabupaten Yahukimo, Papua Pegunungan. Ini merupakan kontak pertama antara orang Kimyal dengan orang asing yang bernama Tuan Philips J. Master bersama 4 orang pembantu dari Suku Lani (3 orang) dan Suku Yali (1 orang).
+                        </p>
+                        
+                        <h3 class="title-font text-2xl font-bold text-[#0c2c46] group-hover:text-[#1b3c1f] transition-colors">7 Klasis GIDI (Gereja Injili Di Indonesia)</h3>
+
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Kekristenan menjadi bagian penting dalam kehidupan sosial dan spiritual jemaat dari Suku Kimyal. Pelayanan gereja di wilayah ini terbagi ke dalam <strong>7 Klasis GIDI</strong> (Gereja Injili Di Indonesia):
+                        </p>
+                    </div>
+                    
+                    
+                    <!-- Daftar 7 Klasis -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-sm text-gray-700 font-medium">
+                        <!-- Kolom Kiri (Nomor 1 - 4) -->
+                        <ol class="space-y-2 list-decimal list-inside text-[#0c2c46]">
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Yamin Korupun</span></li>
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Moronggo Sela</span></li>
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Kerikya Megom</span></li>
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Weiba Kwelamdua</span></li>
+                        </ol>
+                        
+                        <!-- Kolom Kanan (Nomor 5 - 7) -->
+                        <ol class="space-y-2 list-decimal list-inside text-[#0c2c46] mt-2 sm:mt-0" start="5">
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Debula</span></li>
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Dabora Dagi</span></li>
+                            <li><span class="text-gray-700 font-medium ml-1">Klasis Duram</span></li>
+                        </ol>
+                    </div>
+
+
+                </a>
+
+                <!-- Kartu Kanan: Dataran Tinggi & Akses Perintis -->
+                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 card-hover flex flex-col justify-start">
+                    <!-- <div class="w-14 h-14 bg-[#1b3c1f] text-white rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-plane-up"></i>
+                    </div> -->
+                    <h3 class="title-font text-2xl font-bold text-[#0c2c46] mb-3">Dataran Tinggi &amp; Akses Perintis</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Wilayah ini merupakan daerah dataran tinggi dengan topografi terjal dan elevasi sekitar 5.500 kaki (1,6764 km) dari permukaan laut. Tantangan geografis ini membuat akses transportasi darat sangat terbatas, sehingga mobilitas antardistrik sering kali hanya dapat dijangkau menggunakan <strong>penerbangan perintis</strong> dengan pesawat-pesawat kecil.
+                    </p>
+                    <a href="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" target="_blank">
+                        <img src="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" class="aspec-4/3 mt-4 rounded" alt="">
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- BAHASA / LANGUAGE -->
+    <section id="language" class="py-24 relative overflow-hidden"
+             style="background: linear-gradient(rgba(100,31,23,.82), rgba(100,31,23,.94)), url('./images/ilustrasi7.jpg') center/cover no-repeat; background-attachment: fixed;">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-white/15 border border-white/25 text-white text-xs font-semibold rounded-full uppercase tracking-widest">Bahasa Lokal</span>
+                <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mt-5 text-white">Bahasa Kimyal</h2>
+                <p class="text-white/80 max-w-2xl mx-auto leading-relaxed mt-4">
+                    Bahasa Kimyal adalah bahasa daerah yang menjadi identitas dan sarana komunikasi masyarakat Suku Kimyal.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <!-- Card: Tentang Bahasa -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-8 sm:p-10 rounded-3xl card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-white text-[#641f17] rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold title-font text-white mb-4 tracking-tight">Bahasa Penutur Asli</h3>
+                        <p class="text-white/90 text-lg leading-relaxed">
+                            Bahasa Kimyal dituturkan oleh masyarakat di Distrik Korupun, Kabupaten Yahukimo, dan diwariskan dari generasi ke generasi sebagai penanda identitas budaya.
+                        </p>
+                    </div>
+                    <div class="mt-8 border-t border-white/10 pt-4 text-xs tracking-widest text-white/50 uppercase">Warisan Lisan</div>
+                </div>
+
+                <!-- Card: Wilayah Penutur -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-8 sm:p-10 rounded-3xl card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-white text-[#641f17] rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold title-font text-white mb-4 tracking-tight">Wilayah Penutur</h3>
+                        <p class="text-white/90 text-base leading-relaxed mb-4">
+                            Bahasa Kimyal dituturkan oleh masyarakat kampung-kampung di 4 Distrik, di Kabupaten Yahukimo, Provinsi Papua Pegunungan:
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Korupun</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Dagi</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Duram</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Kwelamdua</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Debula</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Kemnigin</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Haromon</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Senayom</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Kobukdua</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Megom</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Baluk</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Birabuk</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Degitme</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Woura</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Yeminikmo</span>
+                            <span class="px-4 py-1.5 bg-white/15 border border-white/25 text-white text-sm rounded-full">Obis</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 border-t border-white/10 pt-4 text-xs tracking-widest text-white/50 uppercase">Distrik Korupun, Distrik Sela, Distrik Kwelamdua, Distrik Duram</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WISATA / TOURISM -->
+    <section id="tourism" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-[#0c2c46] text-white text-xs font-semibold rounded-full uppercase tracking-widest mb-5">Potensi Alam &amp; Budaya</span>
+                <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-[#0c2c46] mb-4">Potensi Wilayah Kimyal</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    Bentang alam pegunungan dan kekayaan budaya Suku Kimyal menyimpan beragam potensi wisata yang menantang sekaligus memesona.
+                </p>
+            </div>
+
+            <div x-data="tourismCards()" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Loop: Trekking, Kerajinan, Air Terjun, Camping, Arung Jeram, Paralayang -->
+                <template x-for="(card, idx) in cards.slice(0, 6)" :key="idx">
+                    <div class="group relative rounded-3xl overflow-hidden card-hover h-auto flex flex-col">
+                        <div class="card-bg absolute inset-0"
+                             :style="`background: linear-gradient(rgba(${card.overlayRgb},.4), rgba(${card.overlayRgb},.6)), url('${card.image}') center/cover no-repeat;`"></div>
+                        <div class="relative z-10 w-full p-8 flex flex-col justify-end min-h-80">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4 transition-transform group-hover:scale-110"
+                                 :style="`background-color: ${card.bgColor}; color: white;`">
+                                <i :class="card.icon"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl title-font mb-2 text-white" x-text="card.title"></h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-6" x-text="card.description"></p>
+                            <!-- <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-gray-800 transition-all text-sm w-fit">
+                                <span>Selengkapnya</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Penanaman Padi (full-width) -->
+                <div class="group relative rounded-3xl overflow-hidden card-hover h-80 flex items-end sm:col-span-2 lg:col-span-3">
+                    <div class="card-bg absolute inset-0"
+                         style="background: linear-gradient(rgba(27,60,31,.4), rgba(27,60,31,.6)), url('./images/ilustrasi11.jpg') center/cover no-repeat;"></div>
+                    <div class="relative z-10 w-full p-8">
+                        <div class="w-16 h-16 bg-[#1b3c1f] text-white rounded-2xl flex items-center justify-center text-3xl mb-4 transition-transform group-hover:scale-110">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl title-font mb-2 text-white">Potensi Penanaman Padi</h3>
+                        <p class="text-white/90 text-sm leading-relaxed max-w-3xl mb-6">Potensi pengembangan pertanian padi di dataran tinggi — peluang wisata agro sekaligus penguatan ketahanan pangan masyarakat Kimyal.</p>
+                        <!-- <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-gray-800 transition-all text-sm w-fit">
+                            <span>Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI / GALLERY -->
+    <section id="gallery" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="inline-block px-4 py-2 bg-[#0c2c46] text-white text-xs font-semibold rounded-full uppercase tracking-widest mb-5">Dokumentasi</span>
+                <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-[#0c2c46] mb-4">Galeri Suku Kimyal</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    Kumpulan potret kehidupan, budaya, dan alam Suku Kimyal. Klik gambar untuk melihat lebih dekat.
+                </p>
+            </div>
+
+            <div x-data="infographicsGrid(7, 4)" class="select-none">
+                <!-- Container with prev/next buttons -->
+                <div class="relative">
+                    <!-- Prev arrow -->
+                    <button @click="prev()" aria-label="Sebelumnya"
+                            class="absolute -left-6 top-1/2 -translate-y-1/2 w-11 h-11 bg-[#0c2c46] hover:bg-[#0c2c46]/80 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 z-20">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <!-- Grid scroll container -->
+                    <div class="overflow-hidden">
+                        <div class="flex gap-6 transition-transform duration-500 ease-out"
+                             :style="`transform: translateX(${-offset * itemWidth()}%)`"
+                             @touchstart="touchStart($event)" @touchend="touchEnd($event)">
+                            <template x-for="n in total" :key="n">
+                                <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                                    <button @click="openModal(n)"
+                                            class="w-full rounded-2xl overflow-hidden bg-white cursor-pointer group transition-transform hover:scale-105"
+                                            style="aspect-ratio: 4 / 5;">
+                                        <img :src="'./images/posters/' + n + '.jpg'"
+                                             :alt="'Galeri Kimyal ' + n"
+                                             loading="lazy"
+                                             class="w-full h-full object-cover group-hover:brightness-90 transition-all">
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Next arrow -->
+                    <button @click="next()" aria-label="Berikutnya"
+                            class="absolute -right-6 top-1/2 -translate-y-1/2 w-11 h-11 bg-[#0c2c46] hover:bg-[#0c2c46]/80 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 z-20">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Dot navigation -->
+                <div class="flex justify-center items-center gap-2.5 mt-8">
+                    <template x-for="i in numSteps()" :key="'dot-' + i">
+                        <button @click="goToStep(i - 1)" :aria-label="'Ke langkah ' + i"
+                                class="rounded-sm transition-all duration-300"
+                                :class="currentStep() === (i - 1) ? 'w-6 h-2.5 bg-[#0c2c46]' : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'"></button>
+                    </template>
+                </div>
+
+                <!-- Image Modal -->
+                <div x-show="modalOpen" x-cloak
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0"
+                     x-transition:enter-end="opacity-100"
+                     x-transition:leave="transition ease-in duration-200"
+                     x-transition:leave-start="opacity-100"
+                     x-transition:leave-end="opacity-0"
+                     @click="closeModal()" @keydown.escape.window="closeModal()"
+                     class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
+                     style="background: rgba(12,44,70,.88);">
+                    <!-- Close button -->
+                    <button @click="closeModal()" aria-label="Tutup"
+                            class="absolute top-5 right-5 w-11 h-11 bg-white/10 hover:bg-white/25 text-white rounded-full flex items-center justify-center text-xl transition-all">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <!-- Modal image (frameless) -->
+                    <img x-show="modalOpen" :src="'./images/posters/' + modalImage + '.jpg'"
+                         :alt="'Galeri Kimyal ' + modalImage" @click.stop
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         class="max-w-full max-h-full object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-section py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-white/60 mb-4">Mari Terhubung</span>
+            <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                Jelajahi &amp; Dukung<br class="hidden sm:block"> Budaya Kimyal
+            </h2>
+            <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Tertarik mengenal lebih jauh Suku Kimyal atau merencanakan kunjungan wisata ke Yahukimo? Hubungi kami untuk informasi lebih lanjut.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                        class="flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0c2c46] rounded-2xl font-semibold hover:bg-gray-100 transition-all">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Kirim Pesan</span>
+                </button>
+                <a href="https://wa.me/6281289471246" target="_blank" rel="noopener"
+                   class="flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/70 text-white rounded-2xl font-semibold hover:bg-white hover:text-[#0c2c46] transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-grid py-24 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <span class="inline-block px-4 py-2 bg-white/15 border border-white/25 text-white text-xs font-semibold rounded-full uppercase tracking-widest mb-6">Kontak</span>
+                    <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mb-5">Hubungi Kami</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Ingin mengetahui lebih banyak tentang Suku Kimyal, budaya, bahasa, atau potensi wisatanya? Sampaikan pertanyaan Anda dan kami akan dengan senang hati membantu.
+                    </p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex gap-5 items-start">
+                            <i class="fa-solid fa-location-dot text-xl text-white mt-1 shrink-0"></i>
+                            <div>
+                                <div class="font-semibold">Lokasi</div>
+                                <div class="text-gray-300 text-sm mt-1">Distrik Korupun, Kabupaten Yahukimo,<br>Papua Pegunungan, Indonesia</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 items-start">
+                            <i class="fa-brands fa-whatsapp text-xl text-white mt-1 shrink-0"></i>
+                            <div>
+                                <div class="font-semibold">Telepon / WhatsApp</div>
+                                <a href="https://wa.me/6281289471246" target="_blank" rel="noopener" class="text-gray-300 text-sm hover:text-white transition-colors">+62 823-5510-4626</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 items-start">
+                            <i class="fa-solid fa-mountain-sun text-xl text-white mt-1 shrink-0"></i>
+                            <div>
+                                <div class="font-semibold">Wilayah</div>
+                                <div class="text-gray-300 text-sm mt-1">Distrik Sela · Korupun · Duram · Kwelemdua</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10" style="min-height: 480px;">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Korupun,+Yahukimo,+Papua+Pegunungan,+Indonesia&t=m&z=9&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0; display:block; min-height:480px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Wilayah Suku Kimyal — Yahukimo, Papua Pegunungan">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#061b2d] text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-10 mb-8">
+                <!-- Logo -->
+                <a href="#home" onclick="smoothScrollTo('home')" class="flex items-center gap-3">
+                    <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-10 w-auto object-contain rounded-full">
+                    <div class="leading-tight">
+                        <div class="font-bold text-base tracking-tight text-white">The Spirit of Kimyal's</div>
+                        <div class="text-xs text-gray-400 italic">Yahukimo, Papua Pegunungan</div>
+                    </div>
+                </a>
+
+                <!-- Footer Links with Dot Separators -->
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+                    <a href="#about" onclick="smoothScrollTo('about')" class="hover:text-white transition-colors">Profil</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#region" onclick="smoothScrollTo('region')" class="hover:text-white transition-colors">Wilayah</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#language" onclick="smoothScrollTo('language')" class="hover:text-white transition-colors">Bahasa</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#tourism" onclick="smoothScrollTo('tourism')" class="hover:text-white transition-colors">Wisata</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#contact" onclick="smoothScrollTo('contact')" class="hover:text-white transition-colors">Kontak</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="whatsapp"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>&copy; 2026 The Spirit of Kimyal's. All Rights Reserved.</div>
+                <div>
+                    Powered by
+                    <a href="https://nokensoft.com" target="_blank" rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white font-medium transition-colors ml-1">Nokensoft.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <!-- WhatsApp Chat Widget -->
+    <div id="wa-widget" class="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">
+        <!-- Popup -->
+        <div id="wa-popup" class="hidden w-72 bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div class="bg-[#25D366] px-5 py-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fa-brands fa-whatsapp text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-white text-sm">Chat dengan Kami</div>
+                        <div class="text-xs text-white/75 mt-0.5">Biasanya membalas dalam hitungan menit</div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5">
+                <form id="wa-form" onsubmit="sendWhatsApp(event)" class="space-y-3">
+                    <input type="text" id="wa-name" placeholder="Nama Anda"
+                           class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-[#25D366] transition-colors">
+                    <textarea id="wa-message" placeholder="Tulis pesan Anda..." rows="3"
+                              class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-[#25D366] resize-none transition-colors"></textarea>
+                    <button type="submit"
+                            class="w-full bg-[#25D366] hover:bg-[#1fbe5c] text-white py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Kirim via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- WA Button -->
+        <button onclick="toggleWAPopup()" aria-label="Chat on WhatsApp"
+                class="w-14 h-14 bg-[#25D366] hover:bg-[#1fbe5c] text-white rounded-full shadow-xl flex items-center justify-center text-2xl hover:scale-110 transition-all">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas"
+            class="fixed bottom-8 right-6 z-50 w-12 h-12 btn-brand text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        /* ── Alpine.js navbar component ───────────────────────── */
+        function navbar() {
+            return {
+                menuOpen: false,
+                scrolled: false,
+                init() {
+                    // Elevate nav shadow on scroll
+                    window.addEventListener('scroll', () => {
+                        this.scrolled = window.scrollY > 50;
+                    }, { passive: true });
+                    // Close menu when clicking outside nav
+                    document.addEventListener('click', (e) => {
+                        if (!this.$el.contains(e.target)) this.menuOpen = false;
+                    });
+                    // Close menu on Escape
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape') this.menuOpen = false;
+                    });
+                },
+                scrollTo(id) {
+                    const el = document.getElementById(id);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    this.menuOpen = false;
+                }
+            };
+        }
+
+        /* ── Alpine.js tourism cards data ───────────────── */
+        function tourismCards() {
+            return {
+                // overlayRgb: warna tema yang sama dengan boks icon (bgColor), dipakai untuk overlay latar
+                cards: [
+                    {
+                        title: 'Trekking & Hiking',
+                        description: 'Menyusuri jalur pegunungan terjal dengan panorama dataran tinggi Papua yang masih alami.',
+                        icon: 'fa-solid fa-person-hiking',
+                        image: './images/ilustrasi3.jpg',
+                        bgColor: '#0c2c46',
+                        overlayRgb: '12,44,70'
+                    },
+                    {
+                        title: 'Kerajinan Kapak Batu',
+                        description: 'Kerajinan kapak batu khas Papua Pegunungan — warisan budaya bernilai tinggi dari tangan pengrajin Kimyal.',
+                        icon: 'fa-solid fa-hammer',
+                        image: './images/ilustrasi7.jpg',
+                        bgColor: '#956019',
+                        overlayRgb: '149,96,25'
+                    },
+                    {
+                        title: 'Air Terjun',
+                        description: 'Air terjun alami yang tersembunyi di lereng pegunungan, menawarkan kesegaran dan keindahan yang memukau.',
+                        icon: 'fa-solid fa-water',
+                        image: './images/ilustrasi6.jpg',
+                        bgColor: '#1b3c1f',
+                        overlayRgb: '27,60,31'
+                    },
+                    {
+                        title: 'Camping',
+                        description: 'Berkemah di alam terbuka dataran tinggi, menyatu dengan hening dan sejuknya udara pegunungan.',
+                        icon: 'fa-solid fa-campground',
+                        image: './images/ilustrasi8.jpg',
+                        bgColor: '#641f17',
+                        overlayRgb: '100,31,23'
+                    },
+                    {
+                        title: 'Arung Jeram',
+                        description: 'Potensi arung jeram di aliran sungai pegunungan yang deras — tantangan bagi para pencinta petualangan.',
+                        icon: 'fa-solid fa-water-ladder',
+                        image: './images/ilustrasi1.jpg',
+                        bgColor: '#0c2c46',
+                        overlayRgb: '12,44,70'
+                    },
+                    {
+                        title: 'Para Layang',
+                        description: 'Potensi paralayang dari ketinggian bukit, menyuguhkan pemandangan lembah dan pegunungan dari udara.',
+                        icon: 'fa-solid fa-parachute-box',
+                        image: './images/ilustrasi5.jpg',
+                        bgColor: '#956019',
+                        overlayRgb: '149,96,25'
+                    }
+                ]
+            };
+        }
+
+        /* ── Alpine.js gallery grid carousel ───────────── */
+        function infographicsGrid(total, perViewDesktop) {
+            return {
+                total: total,
+                perView: perViewDesktop,
+                offset: 0, // index of first visible item
+                touchX: 0,
+                modalOpen: false,
+                modalImage: 1,
+                openModal(n) {
+                    this.modalImage = n;
+                    this.modalOpen = true;
+                    document.body.style.overflow = 'hidden';
+                },
+                closeModal() {
+                    this.modalOpen = false;
+                    document.body.style.overflow = '';
+                },
+                init() {
+                    this.updatePerView();
+                    window.addEventListener('resize', () => this.updatePerView(), { passive: true });
+                },
+                updatePerView() {
+                    const w = window.innerWidth;
+                    if (w < 640) this.perView = 1;
+                    else if (w < 768) this.perView = 2;
+                    else if (w < 1024) this.perView = 3;
+                    else this.perView = perViewDesktop;
+                    if (this.offset > this.maxOffset()) this.offset = this.maxOffset();
+                },
+                maxOffset() { return Math.max(0, this.total - this.perView); },
+                itemWidth() { return 100 / this.perView; },
+                next() { this.offset = Math.min(this.offset + this.perView, this.maxOffset()); },
+                prev() { this.offset = Math.max(this.offset - this.perView, 0); },
+                numSteps() { return Math.ceil(this.total / this.perView); },
+                currentStep() { return Math.round(this.offset / this.perView); },
+                goToStep(i) { this.offset = Math.min(i * this.perView, this.maxOffset()); },
+                touchStart(e) { this.touchX = e.changedTouches[0].screenX; },
+                touchEnd(e) {
+                    const dx = e.changedTouches[0].screenX - this.touchX;
+                    if (Math.abs(dx) < 40) return;
+                    dx < 0 ? this.next() : this.prev();
+                }
+            };
+        }
+
+        // Smooth scroll helper (footer links)
+        function smoothScrollTo(id) {
+            event.preventDefault();
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // WhatsApp chat widget
+        function toggleWAPopup() {
+            document.getElementById('wa-popup').classList.toggle('hidden');
+        }
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value.trim() || 'Tamu';
+            const msg  = document.getElementById('wa-message').value.trim();
+            if (!msg) { document.getElementById('wa-message').focus(); return; }
+            const text = encodeURIComponent('*' + name + '*\n\n' + msg);
+            window.open('https://wa.me/6281289471246?text=' + text, '_blank', 'noopener,noreferrer');
+            document.getElementById('wa-form').reset();
+            document.getElementById('wa-popup').classList.add('hidden');
+        }
+
+        // Back to top — show after 400px scroll
+        window.addEventListener('scroll', function () {
+            const btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            btn.classList.toggle('opacity-0', window.scrollY <= 400);
+            btn.classList.toggle('pointer-events-none', window.scrollY <= 400);
+        }, { passive: true });
+
+        // Close WA popup when clicking outside widget
+        document.addEventListener('click', function(e) {
+            const widget = document.getElementById('wa-widget');
+            const popup  = document.getElementById('wa-popup');
+            if (widget && popup && !widget.contains(e.target)) {
+                popup.classList.add('hidden');
+            }
+        });
+
+        // Keyboard: Escape closes WA popup (nav menu handled by Alpine)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const popup = document.getElementById('wa-popup');
+                if (popup && !popup.classList.contains('hidden')) popup.classList.add('hidden');
+            }
+        });
+
+        // Parallax for hero — desktop only (mobile uses scroll attachment)
+        const mq = window.matchMedia('(min-width: 768px)');
+        if (mq.matches) {
+            window.addEventListener('scroll', () => {
+                const hero = document.querySelector('.hero-bg');
+                if (hero) hero.style.backgroundPositionY = `${window.scrollY * 0.35}px`;
+            }, { passive: true });
+        }
+
+        // Active nav highlight via IntersectionObserver
+        (function () {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('a.nav-link[href^="#"]');
+
+            function activate(id) {
+                navLinks.forEach(function (link) {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                });
+            }
+
+            // Fire when section crosses a band 15%–30% from the viewport top
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) activate(entry.target.id);
+                });
+            }, { rootMargin: '-15% 0px -75% 0px' });
+
+            sections.forEach(function (s) { observer.observe(s); });
+            activate('home'); // default on load
+        })();
+
+        console.log('%cThe Spirit of Kimyal\'s — Loaded', 'color:#0c2c46;font-family:monospace;font-size:13px');
+    </script>
+
+</body>
+</html>
