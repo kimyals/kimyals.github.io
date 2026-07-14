@@ -41,7 +41,7 @@
                         <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
                     </button>
                     <div x-show="open" x-transition class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
-                        <a href="yayasan.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Lembaga</a>
+                        <a href="lembaga.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Lembaga</a>
                         <a href="tim.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Tim</a>
                         <a href="kontak.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Kontak</a>
                         <a href="mitra-kerja.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Mitra Kerja</a>
@@ -90,7 +90,7 @@
                         <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="activeDropdown === 'tentang' ? 'rotate-180' : ''"></i>
                     </button>
                     <div x-show="activeDropdown === 'tentang'" x-transition class="pl-4 mt-2 flex flex-col gap-2 text-sm text-gray-600">
-                        <a href="yayasan.html" class="py-2">Lembaga</a>
+                        <a href="lembaga.html" class="py-2">Lembaga</a>
                         <a href="tim.html" class="py-2">Tim</a>
                         <a href="kontak.html" class="py-2">Kontak</a>
                         <a href="mitra-kerja.html" class="py-2">Mitra Kerja</a>
@@ -124,79 +124,201 @@
         </div>
     </nav>
 
-    
     <main class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <!-- Breadcrumb Navigasi -->
-        <div class="text-sm text-gray-500 mb-5">
-            <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
-            <span class="mx-2">/</span>
-            <span class="text-gray-700">Suku Kimyal</span>
-            <span class="mx-2">/</span>
-            <span class="font-semibold text-gray-900">Geografis</span>
-        </div>
-        
-        <!-- Judul Utama Halaman -->
-        <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Geografis</h1>
-        <p class="text-gray-600 max-w-3xl leading-relaxed mb-12 text-base md:text-lg">
-            Wilayah Suku Kimyal berada di dataran tinggi Yahukimo, dikenal dengan pegunungan, lembah, dan sungai yang kuat membentuk pola kehidupan masyarakat lokal.
-        </p>
-        
-        <!-- Grid Layout 2 Kolom -->
-        <div class="grid gap-10 lg:grid-cols-12 items-start">
+
+        <div class="max-w-6xl mx-auto px-6 pb-24">
+            <!-- Breadcrumb Navigasi -->
+            <div class="text-sm text-gray-500 mb-5">
+                <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-700">Suku Kimyal</span>
+                <span class="mx-2">/</span>
+                <span class="font-semibold text-gray-900">Geografis</span>
+            </div>
             
-            <!-- KOLOM KIRI: INFO TEKS & KONTEKS TRANSPORTASI (7 Kolom Grid) -->
-            <div class="lg:col-span-7 space-y-6">
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8">
-                    <h2 class="title-font text-2xl font-bold text-[#0c2c46] mb-4">Dataran Tinggi & Akses Perintis</h2>
-                    
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Wilayah ini merupakan daerah dataran tinggi dengan topografi terjal dan elevasi sekitar <strong>5.500 kaki (1,6764 km)</strong> dari permukaan laut. Karakteristik alam yang dikelilingi pegunungan tinggi dan lembah dalam merupakan ciri khas utama ruang hidup Suku Kimyal.
-                    </p>
-                    
-                    <p class="text-gray-600 leading-relaxed">
-                        Tantangan geografis yang ekstrem ini membuat akses transportasi darat sangat terbatas. Akibatnya, mobilitas logistik maupun antardistrik hingga saat ini sering kali hanya dapat dijangkau menggunakan <strong>penerbangan perintis</strong> dengan pesawat-pesawat kecil yang mendarat di lapangan terbang darurat setempat.
+            <!-- Judul Utama Halaman -->
+            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Geografis</h1>
+            <p class="text-gray-600 max-w-3xl leading-relaxed mb-12 text-base md:text-lg">
+                Wilayah Suku Kimyal berada di dataran tinggi Yahukimo, dikenal dengan pegunungan, lembah, dan sungai yang kuat membentuk pola kehidupan masyarakat lokal.
+            </p>
+            
+            <!-- Grid Layout 2 Kolom -->
+            <div class="grid gap-10 lg:grid-cols-12 items-start">
+                
+                <!-- KOLOM KIRI: INFO TEKS & KONTEKS TRANSPORTASI (7 Kolom Grid) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8">
+                        <h2 class="title-font text-2xl font-bold text-[#0c2c46] mb-4">Dataran Tinggi & Akses Perintis</h2>
+                        
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Wilayah ini merupakan daerah dataran tinggi dengan topografi terjal dan elevasi sekitar <strong>5.500 kaki (1,6764 km)</strong> dari permukaan laut. Karakteristik alam yang dikelilingi pegunungan tinggi dan lembah dalam merupakan ciri khas utama ruang hidup Suku Kimyal.
+                        </p>
+                        
+                        <p class="text-gray-600 leading-relaxed">
+                            Tantangan geografis yang ekstrem ini membuat akses transportasi darat sangat terbatas. Akibatnya, mobilitas logistik maupun antardistrik hingga saat ini sering kali hanya dapat dijangkau menggunakan <strong>penerbangan perintis</strong> dengan pesawat-pesawat kecil yang mendarat di lapangan terbang darurat setempat.
+                        </p>
+                    </div>
+
+                    <!-- Mini Grid Karakteristik Alam Tradisional -->
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="bg-gray-50/60 border border-gray-100 rounded-2xl p-5">
+                            <h3 class="font-semibold text-[#0c2c46] mb-2">Topografi Terjal</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Pegunungan batu, lereng curam, dan aliran sungai deras menguji ketahanan fisik masyarakat.</p>
+                        </div>
+                        <div class="bg-gray-50/60 border border-gray-100 rounded-2xl p-5">
+                            <h3 class="font-semibold text-[#0c2c46] mb-2">Iklim Pegunungan</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Cuaca sejuk dengan intensitas hujan musiman tinggi mempengaruhi siklus bertani tradisional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOLOM KANAN: MEDIA FOTO AIRSTRIP (5 Kolom Grid) -->
+                <div class="lg:col-span-5">
+                    <div class="w-full group overflow-hidden rounded-3xl border border-gray-100 shadow-lg bg-gray-50">
+                        <a href="./images/geografis.png" target="_blank" class="block relative">
+                            <img 
+                                src="./images/geografis.png" 
+                                class="w-full h-auto min-h-[300px] object-cover object-center transform group-hover:scale-102 transition-transform duration-500" 
+                                alt="Korupun Airstrip, Yahukimo, Highland Papua"
+                            >
+                            <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-1">
+                                    <span>Buka Gambar Penuh</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="text-xs text-center text-gray-400 mt-3 italic">
+                        Dokumentasi: Korupun Airstrip, Yahukimo, Papua Pegunungan.
                     </p>
                 </div>
 
-                <!-- Mini Grid Karakteristik Alam Tradisional -->
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="bg-gray-50/60 border border-gray-100 rounded-2xl p-5">
-                        <h3 class="font-semibold text-[#0c2c46] mb-2">Topografi Terjal</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Pegunungan batu, lereng curam, dan aliran sungai deras menguji ketahanan fisik masyarakat.</p>
+            </div>
+        </div>
+
+
+
+        <!-- ======================================================== -->
+        <!-- SECTION: BENTANG VISUAL WILAYAH                          -->
+        <!-- ======================================================== -->
+        <section id="sebaran-suku" class="py-24 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <!-- Grid Layout 2 Kolom Full Width Tanpa Padding -->
+                <div class="grid gap-6 md:grid-cols-2">
+
+                    <!-- Kolom Kiri: Lapter 1 -->
+                    <div class="overflow-hidden rounded-3xl border border-gray-100 shadow-md bg-gray-50 aspect-[16/10] group">
+                        <a href="./images/lapter1.png" target="_blank" class="block relative w-full h-full">
+                            <img 
+                                src="./images/lapter1.png" 
+                                alt="Lapangan terbang Korupun" 
+                                class="w-full h-full object-cover object-center transform group-hover:scale-102 transition-transform duration-500"
+                            >
+                            <!-- Overlay Hover Interaktif -->
+                            <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-sm">
+                                    Buka Gambar Penuh ↗
+                                </span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="bg-gray-50/60 border border-gray-100 rounded-2xl p-5">
-                        <h3 class="font-semibold text-[#0c2c46] mb-2">Iklim Pegunungan</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Cuaca sejuk dengan intensitas hujan musiman tinggi mempengaruhi siklus bertani tradisional.</p>
+
+                    <!-- Kolom Kanan: Lapter 2 -->
+                    <div class="overflow-hidden rounded-3xl border border-gray-100 shadow-md bg-gray-50 aspect-[16/10] group">
+                        <a href="./images/lapter2.png" target="_blank" class="block relative w-full h-full">
+                            <img 
+                                src="./images/lapter2.png" 
+                                alt="Lembah Korupun" 
+                                class="w-full h-full object-cover object-center transform group-hover:scale-102 transition-transform duration-500"
+                            >
+                            <!-- Overlay Hover Interaktif -->
+                            <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-sm">
+                                    Buka Gambar Penuh ↗
+                                </span>
+                            </div>
+                        </a>
                     </div>
+                    
                 </div>
             </div>
+        </section>
+    
+        <!-- ======================================================== -->
+        <!-- SEBARAN SUKU KIMYAL                           -->
+        <!-- ======================================================== -->
+        <section id="sebaran-suku" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Judul Tengah Atas -->
+                <div class="text-center mb-16">
+                    <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mt-5 mb-4 text-[#0c2c46]">
+                        Sebaran Suku Kimyal
+                    </h2>
+                </div>
 
-            <!-- KOLOM KANAN: MEDIA FOTO AIRSTRIP (5 Kolom Grid) -->
-            <div class="lg:col-span-5">
-                <div class="w-full group overflow-hidden rounded-3xl border border-gray-100 shadow-lg bg-gray-50">
-                    <a href="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" target="_blank" class="block relative">
-                        <img 
-                            src="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" 
-                            class="w-full h-auto min-h-[300px] object-cover object-center transform group-hover:scale-102 transition-transform duration-500" 
-                            alt="Korupun Airstrip, Yahukimo, Highland Papua"
-                        >
-                        <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-1">
-                                <span>Buka Gambar Penuh</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                <!-- Grid 4 Distrik -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                    <!-- Distrik Korupun -->
+                    <a href="https://share.google/ndquUIvM1faZ3jS0q" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                        <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(27,60,31,.35), rgba(27,60,31,.65)), url('./images/ilustrasi7.jpg') center/cover no-repeat;"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                            <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                            <div class="font-semibold text-xl text-white">Korupun</div>
+                            <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                                <span>Lihat Peta Google</span>
+                                <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </div>
                     </a>
-                </div>
-                <p class="text-xs text-center text-gray-400 mt-3 italic">
-                    Dokumentasi: Korupun Airstrip, Yahukimo, Papua Pegunungan.
-                </p>
-            </div>
 
-        </div>
-    </div>
-</main>
+                    <!-- Distrik Sela -->
+                    <a href="https://share.google/bBpNbYs1YfJJAHWDl" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                        <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(12,44,70,.35), rgba(12,44,70,.65)), url('./images/ilustrasi11.jpg') center/cover no-repeat;"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                            <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                            <div class="font-semibold text-xl text-white">Sela</div>
+                            <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                                <span>Lihat Peta Google</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Distrik Duram -->
+                    <a href="https://share.google/Ey4jEnuk7QnJ8ZunD" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                        <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(100,31,23,.35), rgba(100,31,23,.65)), url('./images/ilustrasi9.jpg center/cover no-repeat');"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                            <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                            <div class="font-semibold text-xl text-white">Duram</div>
+                            <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                                <span>Lihat Peta Google</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Distrik Kwelamdua -->
+                    <a href="https://share.google/8P9twWt2GZLIqPzHV" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
+                        <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(149,96,25,.35), rgba(149,96,25,.65)), url('./images/ilustrasi3.jpg') center/cover no-repeat;"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
+                            <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
+                            <div class="font-semibold text-xl text-white">Kwelamdua</div>
+                            <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                                <span>Lihat Peta Google</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-[#061b2d] text-white pt-12 pb-8">
@@ -263,3 +385,4 @@
     </script>
 </body>
 </html>
+

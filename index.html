@@ -182,7 +182,7 @@
                         <div x-show="open" 
                             x-transition 
                             class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
-                            <a href="yayasan.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46] transition-colors">Lembaga</a>
+                            <a href="lembaga.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46] transition-colors">Lembaga</a>
                             <a href="tim.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46] transition-colors">Tim</a>
                             <a href="kontak.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46] transition-colors">Kontak</a>
                             <a href="mitra-kerja.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46] transition-colors">Mitra Kerja</a>
@@ -250,7 +250,7 @@
                         <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="activeDropdown === 'tentang' ? 'rotate-180' : ''"></i>
                     </button>
                     <div x-show="activeDropdown === 'tentang'" x-transition class="pl-4 mt-2 flex flex-col gap-2 text-sm text-gray-600">
-                        <a href="yayasan.html" class="py-2">Lembaga</a>
+                        <a href="lembaga.html" class="py-2">Lembaga</a>
                         <a href="tim.html" class="py-2">Tim</a>
                         <a href="kontak.html" class="py-2">Kontak</a>
                         <a href="mitra-kerja.html" class="py-2">Mitra Kerja</a>
@@ -334,7 +334,7 @@
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4">
                         <!-- Tombol: Lembaga -->
-                        <a href="yayasan.html" class="group flex items-center justify-between p-5 bg-gray-50 border border-gray-100 rounded-2xl transition-colors duration-300">
+                        <a href="lembaga.html" class="group flex items-center justify-between p-5 bg-gray-50 border border-gray-100 rounded-2xl transition-colors duration-300">
                             <span class="font-semibold text-gray-700 group-hover:text-[#0c2c46] transition-colors duration-300">Lembaga</span>
                             <div class="w-5 overflow-hidden relative flex items-center justify-end">
                                 <i class="fa-solid fa-arrow-right text-[#0c2c46] transform -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
@@ -552,112 +552,40 @@
         </div>
     </section>
 
-    
+
+
     <!-- ======================================================== -->
-    <!-- SECTION 1: SEBARAN SUKU KIMYAL                           -->
+    <!-- SECTION 3: AKSES TRANSPORTASI                            -->
     <!-- ======================================================== -->
-    <section id="sebaran-suku" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
+    <section id="transportasi" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
             <!-- Judul Tengah Atas -->
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mt-5 mb-4 text-[#0c2c46]">
-                    Sebaran Suku Kimyal
+                    Akses Transportasi
                 </h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Wilayah persebaran adat Suku Kimyal yang terbagi ke dalam 4 Distrik utama di Kabupaten Yahukimo.</p>
             </div>
 
-            <!-- Grid 4 Distrik -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-                <!-- Distrik Korupun -->
-                <a href="https://share.google/ndquUIvM1faZ3jS0q" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
-                    <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(27,60,31,.35), rgba(27,60,31,.65)), url('./images/ilustrasi7.jpg') center/cover no-repeat;"></div>
-                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
-                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
-                        <div class="font-semibold text-xl text-white">Korupun</div>
-                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
-                            <span>Lihat Peta Google</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Distrik Sela -->
-                <a href="https://share.google/bBpNbYs1YfJJAHWDl" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
-                    <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(12,44,70,.35), rgba(12,44,70,.65)), url('./images/ilustrasi11.jpg') center/cover no-repeat;"></div>
-                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
-                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
-                        <div class="font-semibold text-xl text-white">Sela</div>
-                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
-                            <span>Lihat Peta Google</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Distrik Duram -->
-                <a href="https://share.google/Ey4jEnuk7QnJ8ZunD" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
-                    <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(100,31,23,.35), rgba(100,31,23,.65)), url('./images/ilustrasi9.jpg center/cover no-repeat');"></div>
-                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
-                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
-                        <div class="font-semibold text-xl text-white">Duram</div>
-                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
-                            <span>Lihat Peta Google</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Distrik Kwelamdua -->
-                <a href="https://share.google/8P9twWt2GZLIqPzHV" target="_blank" class="group relative block rounded-3xl overflow-hidden min-h-56">
-                    <div class="region-bg absolute inset-0" style="background: linear-gradient(rgba(149,96,25,.35), rgba(149,96,25,.65)), url('./images/ilustrasi3.jpg') center/cover no-repeat;"></div>
-                    <div class="relative z-10 h-full p-8 flex flex-col justify-end min-h-56">
-                        <div class="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Distrik</div>
-                        <div class="font-semibold text-xl text-white">Kwelamdua</div>
-                        <span class="mt-3 inline-flex items-center gap-2 text-white/90 text-sm font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
-                            <span>Lihat Peta Google</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
+            <!-- Konten Topografi & Penerbangan Perintis -->
+            <div class="bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 flex flex-col items-center text-center">
+                <h3 class="title-font text-2xl font-bold text-[#0c2c46] mb-4">Dataran Tinggi &amp; Akses Perintis</h3>
                 
+                <p class="text-gray-600 leading-relaxed max-w-3xl mb-8">
+                    Wilayah ini merupakan daerah dataran tinggi dengan topografi terjal dan elevasi sekitar 5.500 kaki (1,6764 km) dari permukaan laut. Tantangan geografis ini membuat akses transportasi darat sangat terbatas, sehingga mobilitas antardistrik sering kali hanya dapat dijangkau menggunakan <strong>penerbangan perintis</strong> dengan pesawat-pesawat kecil.
+                </p>
+                
+                <!-- Foto Airstrip -->
+                <div class="w-full max-w-2xl group overflow-hidden rounded-2xl border border-gray-100 shadow-md">
+                    <a href="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" target="_blank" class="block relative">
+                        <img src="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500" alt="Korupun Airstrip">
+                        <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-sm">Buka Gambar Penuh ↗</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-
-
-<!-- ======================================================== -->
-<!-- SECTION 3: AKSES TRANSPORTASI                            -->
-<!-- ======================================================== -->
-<section id="transportasi" class="py-24 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-6">
-        <!-- Judul Tengah Atas -->
-        <div class="text-center mb-12">
-            <h2 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold mt-5 mb-4 text-[#0c2c46]">
-                Akses Transportasi
-            </h2>
-        </div>
-
-        <!-- Konten Topografi & Penerbangan Perintis -->
-        <div class="bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 flex flex-col items-center text-center">
-            <h3 class="title-font text-2xl font-bold text-[#0c2c46] mb-4">Dataran Tinggi &amp; Akses Perintis</h3>
-            
-            <p class="text-gray-600 leading-relaxed max-w-3xl mb-8">
-                Wilayah ini merupakan daerah dataran tinggi dengan topografi terjal dan elevasi sekitar 5.500 kaki (1,6764 km) dari permukaan laut. Tantangan geografis ini membuat akses transportasi darat sangat terbatas, sehingga mobilitas antardistrik sering kali hanya dapat dijangkau menggunakan <strong>penerbangan perintis</strong> dengan pesawat-pesawat kecil.
-            </p>
-            
-            <!-- Foto Airstrip -->
-            <div class="w-full max-w-2xl group overflow-hidden rounded-2xl border border-gray-100 shadow-md">
-                <a href="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" target="_blank" class="block relative">
-                    <img src="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500" alt="Korupun Airstrip">
-                    <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-sm">Buka Gambar Penuh ↗</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 
@@ -1254,3 +1182,4 @@
 
 </body>
 </html>
+
