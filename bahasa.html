@@ -24,6 +24,7 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+    
     <nav x-data="navbar()" class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50 shadow-sm border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3">
@@ -123,8 +124,10 @@
             </div>
         </div>
     </nav>
+
     <main class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
+            <!-- Breadcrumb Navigasi -->
             <div class="text-sm text-gray-500 mb-5">
                 <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
                 <span class="mx-2">/</span>
@@ -132,22 +135,80 @@
                 <span class="mx-2">/</span>
                 <span class="font-semibold text-gray-900">Bahasa</span>
             </div>
-            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Bahasa</h1>
-            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Bahasa Kimyal adalah harta budaya yang memperkuat identitas dan menghubungkan komunitas di pegunungan Yahukimo.</p>
-            <div class="grid gap-6 md:grid-cols-3">
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Warisan</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Bahasa ini diwariskan secara lisan dari generasi ke generasi.</p>
+            
+            <!-- Judul Utama Halaman -->
+            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Bahasa Kimyal</h1>
+            <p class="text-gray-600 max-w-3xl leading-relaxed mb-12 text-base md:text-lg">
+                Bahasa Kimyal adalah harta budaya sekaligus penanda identitas yang mengakar kuat, memperkuat nilai persaudaraan, dan menghubungkan seluruh komunitas di pegunungan Yahukimo.
+            </p>
+            
+            <!-- BARIS ATAS: KARTU INFORMASI (2 KOLOM) -->
+            <div class="grid gap-6 md:grid-cols-2 mb-8">
+                <!-- Kolom Kiri: Bahasa Penutur Asli -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-[#641f17]/10 text-[#641f17] rounded-xl flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h2 class="font-bold text-xl text-[#0c2c46] mb-3">Bahasa Penutur Asli</h2>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Bahasa ini dituturkan oleh masyarakat di Distrik Korupun, Kabupaten Yahukimo, dan secara konsisten diwariskan dari generasi ke generasi sebagai benteng pertahanan warisan lisan serta identitas budaya lokal.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Komunikasi</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Bahasa Kimyal menjadi alat komunikasi utama dalam kehidupan sehari-hari.</p>
-                </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Pelestarian</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Mendokumentasikan kosakata dan cerita lokal penting bagi keberlanjutan bahasa.</p>
+
+                <!-- Kolom Kanan: Pelestarian & Komunikasi -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-[#0c2c46]/10 text-[#0c2c46] rounded-xl flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h2 class="font-bold text-xl text-[#0c2c46] mb-3">Pelestarian & Komunikasi</h2>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Menjadi alat komunikasi utama dalam kehidupan sehari-hari, ritual adat, dan aktivitas keagamaan. Mendokumentasikan kosakata asli penting dilakukan demi keberlanjutan bahasa ibu ini di era modern.
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- BARIS BAWAH: WILAYAH PENUTUR (KOLOM PENUH) -->
+            <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-[#641f17]/10 text-[#641f17] rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-xl text-[#0c2c46]">Wilayah Penutur</h2>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Bahasa Kimyal dituturkan secara aktif oleh masyarakat kampung-kampung di wilayah administrasi Provinsi Papua Pegunungan yang mencakup:
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Kumpulan Tag Kampung (Dynamic with Alpine.js) -->
+                <div class="flex flex-wrap gap-2.5 mb-8" 
+                    x-data="{ 
+                        villages: [
+                            'Korupun', 'Dagi', 'Duram', 'Kwelamdoua', 'Debula', 'Kemligin', 
+                            'Haroman', 'Senayom', 'Orisin', 'Eyub', 'Ouldomon', 'Soulda', 
+                            'Phoy', 'Kwarangdoua', 'Seiklu', 'Serepyarenggel', 'Kobukdoua', 
+                            'Megom', 'Baluk', 'Birabuk', 'Degitme', 'Woura', 'Yeminikmo', 
+                            'Obis', 'Wenyubu', 'Koak', 'Batkuk', 'Yabat', 'Weral', 'Dilda’o', 
+                            'Kina', 'Niniwi', 'Kigak', 'Dengat', 'Nakelak', 'Yamdoua', 
+                            'Maldoua', 'Moromen', 'Basal', 'Soma’doua', 'Manengmok', 
+                            'Segetam', 'Somdamak', 'Kebna’ak'
+                        ] 
+                    }">
+                    
+                    <template x-for="(village, index) in villages" :key="index">
+                        <span x-text="village" 
+                            class="px-3.5 py-1.5 bg-white border border-gray-200/80 text-gray-700 text-xs md:text-sm rounded-full shadow-sm transition-all duration-200 hover:border-[#0c2c46]/30 hover:shadow">
+                        </span>
+                    </template>
+                </div>
+
+            </div>
+
         </div>
     </main>
     
