@@ -249,11 +249,64 @@
 
 
 
-    <footer class="bg-[#061b2d] text-white py-10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm text-gray-300">© 2026 The Spirit of Kimyal's. All Rights Reserved.</p>
+    <!-- FOOTER -->
+    <footer class="bg-[#061b2d] text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-10 mb-8">
+                <!-- Logo -->
+                <a href="#home" onclick="smoothScrollTo('home')" class="flex items-center gap-3">
+                    <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-10 w-auto object-contain rounded-full">
+                    <div class="leading-tight">
+                        <div class="font-bold text-base tracking-tight text-white">The Spirit of Kimyal's</div>
+                        <div class="text-xs text-gray-400 italic">Yahukimo, Papua Pegunungan</div>
+                    </div>
+                </a>
+
+                <!-- Footer Links with Dot Separators -->
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+                    <a href="#about" onclick="smoothScrollTo('about')" class="hover:text-white transition-colors">Profil</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#region" onclick="smoothScrollTo('region')" class="hover:text-white transition-colors">Wilayah</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#language" onclick="smoothScrollTo('language')" class="hover:text-white transition-colors">Bahasa</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#tourism" onclick="smoothScrollTo('tourism')" class="hover:text-white transition-colors">Wisata</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#contact" onclick="smoothScrollTo('contact')" class="hover:text-white transition-colors">Kontak</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="whatsapp"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>&copy; 2026 The Spirit of Kimyal's. All Rights Reserved.</div>
+                <div>
+                    Powered by
+                    <a href="https://nokensoft.com" target="_blank" rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white font-medium transition-colors ml-1">Nokensoft.com</a>
+                </div>
+            </div>
         </div>
     </footer>
+    
     <script>
         function navbar() { return { menuOpen: false, activeDropdown: null, toggleDropdown(section) { this.activeDropdown = this.activeDropdown === section ? null : section; } } }
     </script>

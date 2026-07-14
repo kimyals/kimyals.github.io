@@ -123,38 +123,139 @@
             </div>
         </div>
     </nav>
+
+    
     <main class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-sm text-gray-500 mb-5">
-                <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
-                <span class="mx-2">/</span>
-                <span class="text-gray-700">Suku Kimyal</span>
-                <span class="mx-2">/</span>
-                <span class="font-semibold text-gray-900">Geografis</span>
-            </div>
-            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Geografis</h1>
-            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Wilayah Suku Kimyal berada di dataran tinggi Yahukimo, dikenal dengan pegunungan, lembah, dan sungai yang kuat membentuk kehidupan masyarakat.</p>
-            <div class="grid gap-6 md:grid-cols-3">
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Topografi</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Pegunungan terjal dan lembah dalam adalah ciri khas wilayah ini.</p>
-                </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Iklim</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Cuaca sejuk dan hujan musiman mempengaruhi pola hidup dan pertanian lokal.</p>
-                </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Akses</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Akses terbatas, terutama mengandalkan jalan setapak dan penerbangan perintis.</p>
-                </div>
-            </div>
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Breadcrumb Navigasi -->
+        <div class="text-sm text-gray-500 mb-5">
+            <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-700">Suku Kimyal</span>
+            <span class="mx-2">/</span>
+            <span class="font-semibold text-gray-900">Geografis</span>
         </div>
-    </main>
-    <footer class="bg-[#061b2d] text-white py-10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm text-gray-300">© 2026 The Spirit of Kimyal's. All Rights Reserved.</p>
+        
+        <!-- Judul Utama Halaman -->
+        <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Geografis</h1>
+        <p class="text-gray-600 max-w-3xl leading-relaxed mb-12 text-base md:text-lg">
+            Wilayah Suku Kimyal berada di dataran tinggi Yahukimo, dikenal dengan pegunungan, lembah, dan sungai yang kuat membentuk pola kehidupan masyarakat lokal.
+        </p>
+        
+        <!-- Grid Layout 2 Kolom -->
+        <div class="grid gap-10 lg:grid-cols-12 items-start">
+            
+            <!-- KOLOM KIRI: INFO TEKS & KONTEKS TRANSPORTASI (7 Kolom Grid) -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8">
+                    <h2 class="title-font text-2xl font-bold text-[#0c2c46] mb-4">Dataran Tinggi & Akses Perintis</h2>
+                    
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Wilayah ini merupakan daerah dataran tinggi dengan topografi terjal dan elevasi sekitar <strong>5.500 kaki (1,6764 km)</strong> dari permukaan laut. Karakteristik alam yang dikelilingi pegunungan tinggi dan lembah dalam merupakan ciri khas utama ruang hidup Suku Kimyal.
+                    </p>
+                    
+                    <p class="text-gray-600 leading-relaxed">
+                        Tantangan geografis yang ekstrem ini membuat akses transportasi darat sangat terbatas. Akibatnya, mobilitas logistik maupun antardistrik hingga saat ini sering kali hanya dapat dijangkau menggunakan <strong>penerbangan perintis</strong> dengan pesawat-pesawat kecil yang mendarat di lapangan terbang darurat setempat.
+                    </p>
+                </div>
+
+                <!-- Mini Grid Karakteristik Alam Tradisional -->
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="bg-gray-50/60 border border-gray-100 rounded-2xl p-5">
+                        <h3 class="font-semibold text-[#0c2c46] mb-2">Topografi Terjal</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Pegunungan batu, lereng curam, dan aliran sungai deras menguji ketahanan fisik masyarakat.</p>
+                    </div>
+                    <div class="bg-gray-50/60 border border-gray-100 rounded-2xl p-5">
+                        <h3 class="font-semibold text-[#0c2c46] mb-2">Iklim Pegunungan</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Cuaca sejuk dengan intensitas hujan musiman tinggi mempengaruhi siklus bertani tradisional.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KOLOM KANAN: MEDIA FOTO AIRSTRIP (5 Kolom Grid) -->
+            <div class="lg:col-span-5">
+                <div class="w-full group overflow-hidden rounded-3xl border border-gray-100 shadow-lg bg-gray-50">
+                    <a href="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" target="_blank" class="block relative">
+                        <img 
+                            src="./images/air-strips/Korupun Airstrip, Yahukimo, Highland Papua.jpg" 
+                            class="w-full h-auto min-h-[300px] object-cover object-center transform group-hover:scale-102 transition-transform duration-500" 
+                            alt="Korupun Airstrip, Yahukimo, Highland Papua"
+                        >
+                        <div class="absolute inset-0 bg-[#0c2c46]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white/90 text-[#0c2c46] text-xs font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-1">
+                                <span>Buka Gambar Penuh</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <p class="text-xs text-center text-gray-400 mt-3 italic">
+                    Dokumentasi: Korupun Airstrip, Yahukimo, Papua Pegunungan.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#061b2d] text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-10 mb-8">
+                <!-- Logo -->
+                <a href="#home" onclick="smoothScrollTo('home')" class="flex items-center gap-3">
+                    <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-10 w-auto object-contain rounded-full">
+                    <div class="leading-tight">
+                        <div class="font-bold text-base tracking-tight text-white">The Spirit of Kimyal's</div>
+                        <div class="text-xs text-gray-400 italic">Yahukimo, Papua Pegunungan</div>
+                    </div>
+                </a>
+
+                <!-- Footer Links with Dot Separators -->
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+                    <a href="#about" onclick="smoothScrollTo('about')" class="hover:text-white transition-colors">Profil</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#region" onclick="smoothScrollTo('region')" class="hover:text-white transition-colors">Wilayah</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#language" onclick="smoothScrollTo('language')" class="hover:text-white transition-colors">Bahasa</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#tourism" onclick="smoothScrollTo('tourism')" class="hover:text-white transition-colors">Wisata</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#contact" onclick="smoothScrollTo('contact')" class="hover:text-white transition-colors">Kontak</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="whatsapp"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>&copy; 2026 The Spirit of Kimyal's. All Rights Reserved.</div>
+                <div>
+                    Powered by
+                    <a href="https://nokensoft.com" target="_blank" rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white font-medium transition-colors ml-1">Nokensoft.com</a>
+                </div>
+            </div>
         </div>
     </footer>
+    
     <script>
         function navbar() {
             return { menuOpen: false, activeDropdown: null, toggleDropdown(section) { this.activeDropdown = this.activeDropdown === section ? null : section; } }
