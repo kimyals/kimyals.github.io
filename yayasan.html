@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan — The Spirit of Kimyal's</title>
+    <meta name="description" content="Yayasan The Spirit of Kimyal's mendukung pelestarian budaya, pendidikan, dan pemberdayaan masyarakat Kimyal.">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-blue:   #0c2c46;
+            --color-green:  #1b3c1f;
+            --color-red:    #641f17;
+            --color-orange: #956019;
+        }
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .title-font { font-family: 'Playfair Display', 'Times New Roman', serif; }
+        .nav-link { transition: color .25s ease, transform .25s ease; position: relative; }
+        .nav-link:hover { color: var(--color-blue); transform: translateY(-2px); }
+        a.nav-link.active { color: var(--color-blue) !important; font-weight: 700; }
+        @media (min-width: 768px) {
+            a.nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--color-blue); border-radius: 2px; }
+        }
+        .btn-brand { background: linear-gradient(135deg, var(--color-blue), var(--color-green)); transition: transform .25s ease, box-shadow .25s ease; }
+        .btn-brand:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(12,44,70,.3); }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+    <nav x-data="navbar()" class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50 shadow-sm border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-12 w-auto object-contain">
+                <div class="leading-tight">
+                    <div class="font-bold text-lg tracking-tight text-[#0c2c46]">The Spirit of Kimyal's</div>
+                    <div class="text-xs text-gray-500 italic">Yahukimo, Papua Pegunungan</div>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="index.html" class="nav-link text-gray-600 hover:text-[#0c2c46] transition-colors">Beranda</a>
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="flex items-center gap-1 text-gray-600 hover:text-[#0c2c46] py-2 transition-colors">
+                        <span>Tentang</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" x-transition class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
+                        <a href="yayasan.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Yayasan</a>
+                        <a href="tim.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Tim</a>
+                        <a href="kontak.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Kontak</a>
+                        <a href="mitra-kerja.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Mitra Kerja</a>
+                    </div>
+                </div>
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="flex items-center gap-1 text-gray-600 hover:text-[#0c2c46] py-2 transition-colors">
+                        <span>Suku Kimyal</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" x-transition class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
+                        <a href="sejarah-singkat.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Sejarah Singkat</a>
+                        <a href="geografis.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Geografis</a>
+                        <a href="bahasa.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Bahasa</a>
+                        <a href="marga.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Marga</a>
+                    </div>
+                </div>
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="flex items-center gap-1 text-gray-600 hover:text-[#0c2c46] py-2 transition-colors">
+                        <span>Potensi Wilayah</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" x-transition class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
+                        <a href="pertanian.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Pertanian</a>
+                        <a href="pariwisata.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Pariwisata</a>
+                        <a href="fasilitas-penunjang.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#0c2c46]">Fasilitas Penunjang</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button @click="menuOpen = !menuOpen" aria-label="Toggle menu" class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-gray-700 hover:text-[#0c2c46] transition-colors">
+                    <i :class="menuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+                </button>
+                <a href="hubungi-kami.html" class="hidden sm:flex items-center gap-2 px-6 py-3 rounded-2xl btn-brand text-white text-sm font-semibold transition-all">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Hubungi Kami</span>
+                </a>
+            </div>
+        </div>
+        <div x-show="menuOpen" x-cloak class="md:hidden bg-white border-t max-h-[80vh] overflow-y-auto">
+            <div class="px-6 py-6 flex flex-col gap-4 text-base font-medium">
+                <a href="index.html" class="py-2 text-gray-700 border-b border-gray-50">Beranda</a>
+                <div class="border-b border-gray-50 py-2">
+                    <button @click="toggleDropdown('tentang')" class="flex justify-between items-center w-full text-gray-700">
+                        <span>Tentang</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="activeDropdown === 'tentang' ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeDropdown === 'tentang'" x-transition class="pl-4 mt-2 flex flex-col gap-2 text-sm text-gray-600">
+                        <a href="yayasan.html" class="py-2">Yayasan</a>
+                        <a href="tim.html" class="py-2">Tim</a>
+                        <a href="kontak.html" class="py-2">Kontak</a>
+                        <a href="mitra-kerja.html" class="py-2">Mitra Kerja</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-50 py-2">
+                    <button @click="toggleDropdown('kimyal')" class="flex justify-between items-center w-full text-gray-700">
+                        <span>Suku Kimyal</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="activeDropdown === 'kimyal' ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeDropdown === 'kimyal'" x-transition class="pl-4 mt-2 flex flex-col gap-2 text-sm text-gray-600">
+                        <a href="sejarah-singkat.html" class="py-2">Sejarah Singkat</a>
+                        <a href="geografis.html" class="py-2">Geografis</a>
+                        <a href="bahasa.html" class="py-2">Bahasa</a>
+                        <a href="marga.html" class="py-2">Marga</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-50 py-2">
+                    <button @click="toggleDropdown('potensi')" class="flex justify-between items-center w-full text-gray-700">
+                        <span>Potensi Wilayah</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="activeDropdown === 'potensi' ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeDropdown === 'potensi'" x-transition class="pl-4 mt-2 flex flex-col gap-2 text-sm text-gray-600">
+                        <a href="pertanian.html" class="py-2">Pertanian</a>
+                        <a href="pariwisata.html" class="py-2">Pariwisata</a>
+                        <a href="fasilitas-penunjang.html" class="py-2">Fasilitas Penunjang</a>
+                    </div>
+                </div>
+                <a href="hubungi-kami.html" class="py-2 text-gray-700">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+    <main class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-sm text-gray-500 mb-5">
+                <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-700">Tentang</span>
+                <span class="mx-2">/</span>
+                <span class="font-semibold text-gray-900">Yayasan</span>
+            </div>
+            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Yayasan</h1>
+            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Yayasan The Spirit of Kimyal's mendukung pelestarian budaya Kimyal, pendidikan lokal, dan pemberdayaan masyarakat adat di Yahukimo.</p>
+            <div class="grid gap-6 md:grid-cols-3">
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
+                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Misi singkat</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">Melindungi warisan budaya dan memperkuat suara komunitas Kimyal dalam pembangunan berkelanjutan.</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
+                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Fokus utama</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">Dokumentasi adat, pengajaran bahasa lokal, dan dukungan ekonomi bagi keluarga adat.</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
+                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Nilai inti</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">Hormat terhadap tradisi, kolaborasi dengan masyarakat, dan solusi yang berkelanjutan.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-[#061b2d] text-white py-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-300">© 2026 The Spirit of Kimyal's. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function navbar() {
+            return {
+                menuOpen: false,
+                activeDropdown: null,
+                toggleDropdown(section) {
+                    this.activeDropdown = this.activeDropdown === section ? null : section;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -49,4 +49,7 @@ Dikembangkan oleh **[Nokensoft.com](https://nokensoft.com)**
 
 ---
 
+## LIVE Demo
+https://kimyals.github.io
+
 &copy; 2026 The Spirit of Kimyal. All Rights Reserved.
