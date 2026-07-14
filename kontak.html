@@ -24,6 +24,7 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+
     <nav x-data="navbar()" class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50 shadow-sm border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3">
@@ -123,8 +124,10 @@
             </div>
         </div>
     </nav>
+
     <main class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
+            <!-- Breadcrumb Navigasi -->
             <div class="text-sm text-gray-500 mb-5">
                 <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
                 <span class="mx-2">/</span>
@@ -132,29 +135,118 @@
                 <span class="mx-2">/</span>
                 <span class="font-semibold text-gray-900">Kontak</span>
             </div>
-            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Kontak</h1>
-            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Kontak tim kami untuk pertanyaan, dukungan, atau kerja sama dalam pelestarian budaya Kimyal.</p>
+            
+            <!-- Judul Utama Halaman -->
+            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Kontak Kami</h1>
+            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Hubungi tim kami untuk pertanyaan, dukungan, atau kerja sama dalam pelestarian budaya Kimyal.</p>
+            
+            <!-- Grid Informasi Kontak -->
             <div class="grid gap-6 md:grid-cols-3">
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Telepon</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">+62 823-5510-4626 (WhatsApp)</p>
+                <!-- Kolom 1: Telepon / WhatsApp -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Telepon (WA)</h2>
+                        <div class="space-y-3">
+                            <a href="https://wa.me/6281289471246" target="_blank" class="block text-gray-600 hover:text-[#0c2c46] text-sm leading-relaxed group">
+                                <span class="font-medium text-gray-900 group-hover:underline">0812-8947-1246</span>
+                                <span class="block text-xs text-gray-500">(Capt. Buce Sub)</span>
+                            </a>
+                            <a href="https://wa.me/6281298879823" target="_blank" class="block text-gray-600 hover:text-[#0c2c46] text-sm leading-relaxed group">
+                                <span class="font-medium text-gray-900 group-hover:underline">0812-9887-9823</span>
+                                <span class="block text-xs text-gray-500">(Gerats Neipsan, S.S.)</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Email</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">info@kimyal.id</p>
+
+                <!-- Kolom 2: Email -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Email</h2>
+                        <div class="space-y-3">
+                            <a href="mailto:infokimyal@gmail.com" class="block text-gray-600 hover:text-[#0c2c46] text-sm leading-relaxed group">
+                                <span class="font-medium text-gray-900 group-hover:underline">infokimyal@gmail.com</span>
+                                <span class="block text-xs text-gray-500">(Official)</span>
+                            </a>
+                            <a href="mailto:bucesub1989@gmail.com" class="block text-gray-600 hover:text-[#0c2c46] text-sm leading-relaxed group">
+                                <span class="font-medium text-gray-900 group-hover:underline">bucesub1989@gmail.com</span>
+                                <span class="block text-xs text-gray-500">(Capt. Buce Sub)</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Lokasi</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Distrik Korupun, Kabupaten Yahukimo, Papua Pegunungan.</p>
+
+                <!-- Kolom 3: Lokasi Fisik -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Alamat</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed font-medium text-gray-900">
+                            Jalan Gunung, Kompleks Sekla, Dekai, Kab. Yahukimo, Papua Pegunungan.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="bg-[#061b2d] text-white py-10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm text-gray-300">© 2026 The Spirit of Kimyal's. All Rights Reserved.</p>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#061b2d] text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-10 mb-8">
+                <!-- Logo -->
+                <a href="#home" onclick="smoothScrollTo('home')" class="flex items-center gap-3">
+                    <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-10 w-auto object-contain rounded-full">
+                    <div class="leading-tight">
+                        <div class="font-bold text-base tracking-tight text-white">The Spirit of Kimyal's</div>
+                        <div class="text-xs text-gray-400 italic">Yahukimo, Papua Pegunungan</div>
+                    </div>
+                </a>
+
+                <!-- Footer Links with Dot Separators -->
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+                    <a href="#about" onclick="smoothScrollTo('about')" class="hover:text-white transition-colors">Profil</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#region" onclick="smoothScrollTo('region')" class="hover:text-white transition-colors">Wilayah</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#language" onclick="smoothScrollTo('language')" class="hover:text-white transition-colors">Bahasa</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#tourism" onclick="smoothScrollTo('tourism')" class="hover:text-white transition-colors">Wisata</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#contact" onclick="smoothScrollTo('contact')" class="hover:text-white transition-colors">Kontak</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="whatsapp"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>&copy; 2026 The Spirit of Kimyal's. All Rights Reserved.</div>
+                <div>
+                    Powered by
+                    <a href="https://nokensoft.com" target="_blank" rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white font-medium transition-colors ml-1">Nokensoft.com</a>
+                </div>
+            </div>
         </div>
     </footer>
+
     <script>
         function navbar() {
             return {

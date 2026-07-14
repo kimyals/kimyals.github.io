@@ -24,6 +24,7 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+
     <nav x-data="navbar()" class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50 shadow-sm border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3">
@@ -123,8 +124,10 @@
             </div>
         </div>
     </nav>
+
     <main class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
+            <!-- Breadcrumb Navigasi -->
             <div class="text-sm text-gray-500 mb-5">
                 <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
                 <span class="mx-2">/</span>
@@ -132,29 +135,94 @@
                 <span class="mx-2">/</span>
                 <span class="font-semibold text-gray-900">Mitra Kerja</span>
             </div>
+            
+            <!-- Judul Utama Halaman -->
             <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Mitra Kerja</h1>
-            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Mitra kerja kami membantu memperluas dampak program pelestarian budaya dan pengembangan ekonomi berbasis komunitas Kimyal.</p>
-            <div class="grid gap-6 md:grid-cols-3">
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Kolaborasi</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Bekerja bersama organisasi adat dan lembaga lokal untuk hasil yang sederhana dan nyata.</p>
-                </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Dukungan</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Mendukung inisiatif pelestarian dengan sumber daya, pelatihan, dan akses informasi.</p>
-                </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Jaringan</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Menghubungkan komunitas lokal dengan peluang budaya dan wisata yang berkelanjutan.</p>
+            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">
+                Kami bersinergi bersama mitra strategis dalam membuka akses transportasi, mendukung pelayanan kemanusiaan, serta memperluas dampak positif bagi komunitas Suku Kimyal di wilayah terpencil.
+            </p>
+            
+            <!-- Daftar Mitra Kerja (Ditampilkan dalam format kartu) -->
+            <div class="max-w-md">
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col items-center text-center">
+                    <!-- Wrapper Logo -->
+                    <div class="w-full bg-white border border-gray-100 rounded-2xl p-4 mb-5 flex items-center justify-center h-24 shadow-inner">
+                        <img src="https://gidimissionaviation.org/images/logo.png" alt="Logo GIDI Mission Aviation" class="max-h-full max-w-full object-contain">
+                    </div>
+                    
+                    <!-- Informasi Mitra -->
+                    <h2 class="font-bold text-xl text-[#0c2c46] mb-2">GIDI Mission Aviation</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Mitra transportasi udara yang membuka konektivitas wilayah pegunungan, mendukung pelayanan logistik, serta mobilisasi masyarakat dan logistik kemanusiaan bagi Suku Kimyal. <strong>Disclaimer: Saat ini masih dalam tahap inisiasi dan penggalangan dana untuk pengadaan armada pesawat terbang.</strong>
+                    </p>
+                    
+                    <!-- Tombol Kunjungan Situs -->
+                    <a href="https://gidimissionaviation.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0c2c46] text-white text-sm font-semibold rounded-full shadow-sm hover:bg-[#0c2c46]/90 transition-all duration-200">
+                        Kunjungi Situs Web <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="bg-[#061b2d] text-white py-10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm text-gray-300">© 2026 The Spirit of Kimyal's. All Rights Reserved.</p>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#061b2d] text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-10 mb-8">
+                <!-- Logo -->
+                <a href="#home" onclick="smoothScrollTo('home')" class="flex items-center gap-3">
+                    <img src="./images/logo.png" alt="The Spirit of Kimyal's" class="h-10 w-auto object-contain rounded-full">
+                    <div class="leading-tight">
+                        <div class="font-bold text-base tracking-tight text-white">The Spirit of Kimyal's</div>
+                        <div class="text-xs text-gray-400 italic">Yahukimo, Papua Pegunungan</div>
+                    </div>
+                </a>
+
+                <!-- Footer Links with Dot Separators -->
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+                    <a href="#about" onclick="smoothScrollTo('about')" class="hover:text-white transition-colors">Profil</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#region" onclick="smoothScrollTo('region')" class="hover:text-white transition-colors">Wilayah</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#language" onclick="smoothScrollTo('language')" class="hover:text-white transition-colors">Bahasa</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#tourism" onclick="smoothScrollTo('tourism')" class="hover:text-white transition-colors">Wisata</a>
+                    <span class="text-white/20 text-xs select-none">•</span>
+                    <a href="#contact" onclick="smoothScrollTo('contact')" class="hover:text-white transition-colors">Kontak</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="whatsapp"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                       class="w-9 h-9 bg-white/10 border border-white/15 text-gray-400 rounded-lg flex items-center justify-center hover:bg-white hover:text-[#0c2c46] transition-all text-sm">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>&copy; 2026 The Spirit of Kimyal's. All Rights Reserved.</div>
+                <div>
+                    Powered by
+                    <a href="https://nokensoft.com" target="_blank" rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white font-medium transition-colors ml-1">Nokensoft.com</a>
+                </div>
+            </div>
         </div>
     </footer>
+
     <script>
         function navbar() {
             return {

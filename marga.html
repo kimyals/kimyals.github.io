@@ -127,6 +127,7 @@
 
     <main class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
+            <!-- Breadcrumb Navigasi -->
             <div class="text-sm text-gray-500 mb-5">
                 <a href="index.html" class="hover:text-[#0c2c46]">Beranda</a>
                 <span class="mx-2">/</span>
@@ -134,22 +135,82 @@
                 <span class="mx-2">/</span>
                 <span class="font-semibold text-gray-900">Marga</span>
             </div>
-            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Marga</h1>
-            <p class="text-gray-600 max-w-3xl leading-relaxed mb-10">Sistem marga Suku Kimyal mencerminkan ikatan keluarga dan kepemilikan wilayah adat dalam komunitas.</p>
-            <div class="grid gap-6 md:grid-cols-3">
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Kelompok</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Marga membagi masyarakat ke dalam kelompok kekerabatan yang terhormat.</p>
+            
+            <!-- Judul Utama Halaman -->
+            <h1 class="title-font text-4xl sm:text-5xl font-bold text-[#0c2c46] mb-6">Daftar Marga Pada Suku Kimyal</h1>
+            <p class="text-gray-600 max-w-3xl leading-relaxed mb-12 text-base md:text-lg">
+                Sistem kemargaan (marga) pada Suku Kimyal merupakan pilar utama struktur sosial, penanda garis keturunan patrilineal, serta simbol persaudaraan yang mengikat hubungan kekerabatan Suku Kimyal.
+            </p>
+            
+            <!-- BARIS ATAS: KARTU INFORMASI (2 KOLOM) -->
+            <div class="grid gap-6 md:grid-cols-2 mb-8">
+                <!-- Kolom Kiri: Sistem Kekerabatan Patrilineal -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-[#641f17]/10 text-[#641f17] rounded-xl flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h2 class="font-bold text-xl text-[#0c2c46] mb-3">Sistem Patrilineal</h2>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Masyarakat Suku Kimyal menganut sistem patrilineal, di mana nama marga diturunkan secara turun-temurun dari garis ayah. Setiap marga membawa identitas historis, kepemilikan hak tanah adat, serta tanggung jawab sosial yang dijaga erat dari generasi ke generasi.
+                        </p>
+                    </div>
+                    <div class="mt-6 border-t border-gray-200/60 pt-3 text-[11px] tracking-widest text-gray-400 uppercase font-semibold">
+                        Kategori: Struktur Sosial
+                    </div>
                 </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Identitas</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Setiap marga membawa cerita dan tugas adat khusus mereka sendiri.</p>
-                </div>
-                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-                    <h2 class="font-semibold text-lg text-[#0c2c46] mb-3">Warisan</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">Sistem marga membantu meneruskan nilai-nilai dan nama keluarga.</p>
+
+                <!-- Kolom Kanan: Identitas & Aliansi Sosial -->
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-[#0c2c46]/10 text-[#0c2c46] rounded-xl flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h2 class="font-bold text-xl text-[#0c2c46] mb-3">Identitas &amp; Aliansi</h2>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Marga bukan sekadar identitas nama belakang, melainkan penentu utama dalam aliansi pernikahan adat, pembagian peran ritual, serta perekat solidaritas sosial. Menjaga eksistensi silsilah kemargaan merupakan wujud pelestarian nilai luhur leluhur.
+                        </p>
+                    </div>
+                    <div class="mt-6 border-t border-gray-200/60 pt-3 text-[11px] tracking-widest text-gray-400 uppercase font-semibold">
+                        Fokus: Adat &amp; Kekerabatan
+                    </div>
                 </div>
             </div>
+
+            <!-- BARIS BAWAH: DAFTAR MARGA (KOLOM PENUH) -->
+            <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-[#641f17]/10 text-[#641f17] rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-address-book"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-xl text-[#0c2c46]">Daftar Marga Suku Kimyal</h2>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Berikut adalah daftar berbagai marga asli yang hidup bersisian, membentuk kesatuan adat dan menjaga tatanan budaya Suku Kimyal:
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Kumpulan Tag Marga (Dynamic with Alpine.js) -->
+                <div class="flex flex-wrap gap-2.5 mb-2" 
+                    x-data="{ 
+                        margas: [
+                            'Sob', 'Busub', 'Mirin', 'Osu', 'Sala’', 'Neipsan', 'Yalak', 
+                            'Magayang', 'Wakla', 'Keroman', 'Soo', 'Dapla', 'Sengket', 
+                            'Wale', 'Waroman', 'Biri', 'Seroman', 'Uk', 'Wed', 'Sonap', 
+                            'Woul', 'Sol', 'Omu', 'Maling', 'Doyela', 'Barildam', 'Moll', 
+                            'Alya', 'Odban'
+                        ] 
+                    }">
+                    
+                    <template x-for="(marga, index) in margas" :key="index">
+                        <span x-text="marga" 
+                            class="px-4 py-2 bg-white border border-gray-200/80 text-gray-700 text-xs md:text-sm font-medium rounded-full shadow-sm transition-all duration-200 hover:border-[#0c2c46]/30 hover:shadow">
+                        </span>
+                    </template>
+                </div>
+            </div>
+
         </div>
     </main>
 
